@@ -12,6 +12,7 @@ function dataService($http) {
         update: update,
 		remove: remove
     };
+
     return service;
 
     function create(item) {
