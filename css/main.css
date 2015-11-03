@@ -1,0 +1,37 @@
+.mymodal {
+    bottom: 0;
+    left: 0;
+    outline: 0 none;
+    overflow: hidden;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1040;
+}
+
+.modal-dialog {
+    z-index: 10000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    -webkit-transform: translate(-50%, -50%) !important;
+    -moz-transform: translate(-50%, -50%) !important;
+    -ms-transform: translate(-50%, -50%) !important;
+    -o-transform: translate(-50%, -50%) !important;
+    transform: translate(-50%, -50%) !important;
+}
+.border-top {
+    border-top: 1px solid #e5e5e5;
+    padding: 15px 15px 0 15px;
+}
+.ng-invalid.ng-dirty {
+    border-color: #bb1f34;
+}
+
+.ng-valid.ng-dirty {
+    border-color: green;
+}
+.error  {
+    color: #bb1f34;
+}

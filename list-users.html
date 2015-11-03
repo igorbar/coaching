@@ -1,0 +1,70 @@
+<info-message message="vm.message" type="vm.typeMessage" ng-show="vm.showMessage" on-cancel="vm.actions.hideMessage()"></info-message>
+<div>
+    <br />
+    <input ng-model="vm.query" placeholder="Enter text to filter persons" class="form-control">
+    <br />
+    <table class="table table-hover table-condensed">
+        <thead>
+            <tr>
+                <th>
+                    <a href ng-click="expression = 'lastName'; reverse=!reverse">Last Name 			
+                            <span ng-show="expression == 'lastName'" class="glyphicon" ng-class="{'glyphicon-menu-down': reverse, 'glyphicon-menu-up': !reverse}"></span>
+                    </a>
+                </th>
+                <th>
+                    <a href ng-click="expression = 'firstName'; reverse=!reverse">First Name 			 
+                             <span ng-show="expression == 'firstName'" class="glyphicon" ng-class="{'glyphicon-menu-down': reverse, 'glyphicon-menu-up': !reverse}"></span>
+                     </a>
+                </th>
+                <th>
+                    <a href ng-click="expression = 'age'; reverse=!reverse">Age			
+                            <span ng-show="expression == 'age'" class="glyphicon" ng-class="{'glyphicon-menu-down': reverse, 'glyphicon-menu-up': !reverse}"></span>
+                    </a>
+                </th>
+                <th>
+                    <a href ng-click="expression = 'address.city'; reverse=!reverse">City 			
+                            <span ng-show="expression == 'address.city'" class="glyphicon" ng-class="{'glyphicon-menu-down': reverse, 'glyphicon-menu-up': !reverse}"></span>
+                    </a>
+                </th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="user in vm.users | filter:vm.query | orderBy: expression : reverse">
+                <td>{{user.lastName}}</td>
+                <td>{{user.firstName}}</td>
+                <td>{{user.age}}</td>
+                <td>{{user.address.city}}</td>
+                <td>
+                    <a class="btn btn-default" href="#/profile/{{user.id}}" ng-click='vm.actions.viewUser(user)'>
+                        <i class="glyphicon glyphicon-pencil"></i>
+                    </a>
+                    <a class="btn btn-default" data-toggle="modal" data-target="#removeModal" ng-click="vm.actions.getRemoveUserId(user.id)">
+                        <span class="glyphicon glyphicon-trash"></span>
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <a class="btn btn-primary" href="#/profile/add"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add New Person</a>
+
+</div>
+
+<div class="modal" id="removeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Remove user</h4>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to remove this user from the list?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="vm.actions.removeUser()">Remove</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

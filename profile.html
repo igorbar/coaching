@@ -1,0 +1,57 @@
+<form name="vm.profileForm" ng-submit="vm.profileForm.$valid" novalidate>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label ng-class="{error: vm.profileForm.firstName.$invalid && vm.profileForm.$submitted}">First Name *</label>
+                <input type="text" name="firstName" class="form-control" ng-model="vm.user.firstName" required />
+                <div class="error-container" ng-show="vm.profileForm.firstName.$invalid && vm.profileForm.$submitted">
+                    <small class="error" ng-show="vm.profileForm.firstName.$error.required">
+                        First Name is required.
+                    </small>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label ng-class="{error: vm.profileForm.lastName.$invalid && vm.profileForm.$submitted}">Last Name *</label>
+                <input type="text" name="lastName" class="form-control" ng-model="vm.user.lastName" required />
+                <div class="error-container" ng-show="vm.profileForm.lastName.$invalid && vm.profileForm.$submitted">
+                    <small class="error" ng-show="vm.profileForm.lastName.$error.required">
+                        Last Name is required.
+                    </small>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Age </label>
+                <input type="number" name="age" class="form-control" ng-model="vm.user.age" />
+            </div>
+            <div class="form-group">
+                <label>Street</label>
+                <input type="text" name="streetaddress" class="form-control" ng-model="vm.user.address.streetAddress" />
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>City</label>
+                <input type="text" name="city" class="form-control" ng-model="vm.user.address.city" />
+            </div>
+            <div class="form-group">
+                <label>State</label>
+                <input type="text" name="state" class="form-control" ng-model="vm.user.address.state" />
+            </div>
+            <div class="form-group">
+                <label>Postal Code</label>
+                <input type="text" name="postalcode" class="form-control" ng-model="vm.user.address.postalCode" />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="border-top">
+                <div class="pull-right">
+                    <a href="#/list" class="btn btn-default">Cancel</a>
+                    <button ng-click="vm.actions.save()" class="btn btn-primary" ng-disabled="!vm.profileForm.$dirty && vm.profileForm.$pristine">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

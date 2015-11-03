@@ -1,0 +1,62 @@
+{
+  "users": [
+    {
+      "id": 3,
+      "firstName": "Eric",
+      "lastName": "Cartman",
+      "age": 35,
+      "address": {
+        "streetAddress": "Street",
+        "city": "South Park",
+        "state": "CA",
+        "postalCode": "2222222"
+      },
+      "phoneNumber": [
+        {
+          "type": "home",
+          "number": "973-605-6333"
+        },
+        {
+          "type": "fax",
+          "number": "602-919-4211"
+        }
+      ]
+    },
+    {
+      "firstName": "werwetewrt",
+      "lastName": "ertewrtwer",
+      "age": 2342,
+      "address": {
+        "streetAddress": "sgdsfgsdfg",
+        "city": "dfgsdf",
+        "state": "gsdfg",
+        "postalCode": "23423"
+      },
+      "id": 4
+    },
+    {
+      "firstName": "NEw User",
+      "lastName": "Last Name",
+      "age": 22,
+      "address": {
+        "streetAddress": "qw",
+        "city": "Minsk",
+        "state": "MN",
+        "postalCode": "220100"
+      },
+      "id": 5
+    },
+    {
+      "firstName": "first",
+      "lastName": "last",
+      "age": 33,
+      "address": {
+        "streetAddress": "Chapaeva",
+        "city": "New York",
+        "state": "NY",
+        "postalCode": "234567"
+      },
+      "id": 6
+    }
+  ]
+}
