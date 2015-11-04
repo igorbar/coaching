@@ -23,18 +23,6 @@
       ]
     },
     {
-      "firstName": "werwetewrt",
-      "lastName": "ertewrtwer",
-      "age": 2342,
-      "address": {
-        "streetAddress": "str",
-        "city": "dfgsdf",
-        "state": "gsdfg",
-        "postalCode": "23423"
-      },
-      "id": 4
-    },
-    {
       "firstName": "NEw User",
       "lastName": "Last Name",
       "age": 22,
@@ -57,6 +45,18 @@
         "postalCode": "234567"
       },
       "id": 6
+    },
+    {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "age": 3,
+      "address": {
+        "streetAddress": "ffg",
+        "city": "fdg",
+        "state": "dfg",
+        "postalCode": "22"
+      },
+      "id": 8
     }
   ]
 }

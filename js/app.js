@@ -6,7 +6,7 @@
 
             $routeProvider.when('/list', {
                     templateUrl: 'list-users.html',
-                    controller: 'userManageCtrl',
+                    controller: 'userListCtrl',
                     controllerAs: 'vm'
                 })
                 .when('/profile/:userId', {

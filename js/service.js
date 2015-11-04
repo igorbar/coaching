@@ -6,6 +6,7 @@ angular
 dataService.$inject = ['$http'];
 	
 function dataService($http) {
+    var url = 'http://localhost:3000/users/';
     var service = {
         create: create,
         getData: getData,
@@ -16,22 +17,22 @@ function dataService($http) {
     return service;
 
     function create(item) {
-        return $http.post('http://localhost:3000/users/', item);
+        return $http.post(url, item);
     };
 	
 	function getData(id) {
         if(id){
-            return $http.get('http://localhost:3000/users/'+id);
+            return $http.get(url+id);
         }
-        return $http.get('http://localhost:3000/users');
+        return $http.get(url);
     };
 
     function update(item) {
-        return $http.put('http://localhost:3000/users/'+item.id, item);
+        return $http.put(url+item.id, item);
     };
 	
 	function remove(id) {
-        return $http.delete('http://localhost:3000/users/'+id);
+        return $http.delete(url+id);
     };
 }
 

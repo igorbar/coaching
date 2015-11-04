@@ -36,7 +36,7 @@
                 <td>{{user.age}}</td>
                 <td>{{user.address.city}}</td>
                 <td>
-                    <a class="btn btn-default" href="#/profile/{{user.id}}" ng-click='vm.actions.viewUser(user)'>
+                    <a class="btn btn-default" href="#/profile/{{user.id}}">
                         <i class="glyphicon glyphicon-pencil"></i>
                     </a>
                     <a class="btn btn-default" data-toggle="modal" data-target="#removeModal" ng-click="vm.actions.getRemoveUserId(user.id)">

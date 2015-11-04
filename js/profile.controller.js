@@ -3,19 +3,18 @@
     angular.module('coaching')
         .controller('profileCtrl', profileCtrl);
 
-    profileCtrl.$inject = [ '$location', '$routeParams', 'dataService'];
+    profileCtrl.$inject = ['$location', '$routeParams', 'dataService'];
 
     function profileCtrl( $location, $routeParams, dataService) {
         var vm = this;
         vm.user = {};
-        vm.user_id = $routeParams.userId;
 
         vm.actions = {
             save: save
         };
 
         function getUser(){
-            return dataService.getData(vm.user_id)
+            return dataService.getData($routeParams.userId)
                 .success(function (data) {
                     vm.user = data;
                 })
@@ -23,14 +22,14 @@
 
                 });
         };
-        if(vm.user_id != 'add'){
+        if($routeParams.userId != 'add'){
             getUser();
         }
 
 
         function save(){
-            if(vm.profileForm.lastName.$valid){
-                if(vm.user_id == 'add'){
+            if(vm.profileForm.$valid){
+                if($routeParams.userId == 'add'){
                     dataService.create(vm.user)
                         .success(function (data) {
                             $location.path('#/list');

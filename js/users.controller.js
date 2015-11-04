@@ -1,11 +1,11 @@
 (function(){
     'use strict';
     angular.module('coaching')
-        .controller('userManageCtrl', userManageCtrl);
+        .controller('userListCtrl', userListCtrl);
 
-    userManageCtrl.$inject = ['dataService'];
+    userListCtrl.$inject = ['dataService'];
 
-    function userManageCtrl(dataService) {
+    function userListCtrl(dataService) {
         var vm = this;
         vm.expression = 'firstName';
         vm.reverse = false;
@@ -13,7 +13,6 @@
         vm.message = '';
         vm.typeMessage = '',
         vm.users = [];
-        vm.user_id = null;
         vm.removeUser = null;
         vm.showModal = false;
 
@@ -31,7 +30,7 @@
                 vm.users = data;
             })
             .error(function(data) {
-                showMessage(vm.infoMessage.errorServer);
+                showPopup(vm.messages.errorServer, 'error');
             });
         }
 
