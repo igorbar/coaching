@@ -48,6 +48,51 @@
     </table>
     
     <a class="btn btn-primary" href="#/profile/add"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add New Person</a>
+    <br />
+    <br />
+    <table class="table table-hover table-condensed">
+        <thead>
+        <tr>
+            <th>
+                <a href ng-click="expression = 'lastName'; reverse=!reverse">Last Name
+                    <span ng-show="expression == 'lastName'" class="glyphicon" ng-class="{'glyphicon-menu-down': reverse, 'glyphicon-menu-up': !reverse}"></span>
+                </a>
+            </th>
+            <th>
+                <a href ng-click="expression = 'firstName'; reverse=!reverse">First Name
+                    <span ng-show="expression == 'firstName'" class="glyphicon" ng-class="{'glyphicon-menu-down': reverse, 'glyphicon-menu-up': !reverse}"></span>
+                </a>
+            </th>
+            <th>
+                <a href ng-click="expression = 'age'; reverse=!reverse">Age
+                    <span ng-show="expression == 'age'" class="glyphicon" ng-class="{'glyphicon-menu-down': reverse, 'glyphicon-menu-up': !reverse}"></span>
+                </a>
+            </th>
+            <th>
+                <a href ng-click="expression = 'address.city'; reverse=!reverse">City
+                    <span ng-show="expression == 'address.city'" class="glyphicon" ng-class="{'glyphicon-menu-down': reverse, 'glyphicon-menu-up': !reverse}"></span>
+                </a>
+            </th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="user in vm.users | filter:vm.query | orderBy: expression : reverse">
+            <td>{{user.lastName}}</td>
+            <td>{{user.firstName}}</td>
+            <td>{{user.age}}</td>
+            <td>{{user.address.city}}</td>
+            <td>
+                <a class="btn btn-default" href="#/profile/{{user.id}}">
+                    <i class="glyphicon glyphicon-pencil"></i>
+                </a>
+                <a class="btn btn-default" data-toggle="modal" data-target="#removeModal" ng-click="vm.actions.getRemoveUserId(user.id)">
+                    <span class="glyphicon glyphicon-trash"></span>
+                </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
 
 </div>
 
