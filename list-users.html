@@ -77,16 +77,16 @@
         </tr>
         </thead>
         <tbody>
-        <tr ng-repeat="user in vm.users | filter:vm.query | orderBy: expression : reverse">
-            <td>{{user.lastName}}</td>
-            <td>{{user.firstName}}</td>
-            <td>{{user.age}}</td>
-            <td>{{user.address.city}}</td>
+        <tr ng-repeat="admin in vm.admins | filter:vm.query | orderBy: expression : reverse">
+            <td>{{admin.lastName}}</td>
+            <td>{{admin.firstName}}</td>
+            <td>{{admin.age}}</td>
+            <td>{{admin.address.city}}</td>
             <td>
-                <a class="btn btn-default" href="#/profile/{{user.id}}">
+                <a class="btn btn-default" href="#/profile/{{admin.id}}">
                     <i class="glyphicon glyphicon-pencil"></i>
                 </a>
-                <a class="btn btn-default" data-toggle="modal" data-target="#removeModal" ng-click="vm.actions.getRemoveUserId(user.id)">
+                <a class="btn btn-default" data-toggle="modal" data-target="#removeModal" ng-click="vm.actions.getRemoveUserId(admin.id)">
                     <span class="glyphicon glyphicon-trash"></span>
                 </a>
             </td>

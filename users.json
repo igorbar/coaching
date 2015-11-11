@@ -5,27 +5,19 @@
       "firstName": "Eric",
       "lastName": "Cartman",
       "age": 35,
+      "admin": true,
       "address": {
         "streetAddress": "Street",
         "city": "South Park",
         "state": "CA",
         "postalCode": "2222222"
-      },
-      "phoneNumber": [
-        {
-          "type": "home",
-          "number": "973-605-6333"
-        },
-        {
-          "type": "fax",
-          "number": "602-919-4211"
-        }
-      ]
+      }
     },
     {
       "firstName": "NEw User",
       "lastName": "Last Name",
       "age": 22,
+      "admin": false,
       "address": {
         "streetAddress": "qw",
         "city": "Minsk",
@@ -38,6 +30,7 @@
       "firstName": "first",
       "lastName": "last",
       "age": 33,
+      "admin": false,
       "address": {
         "streetAddress": "Chapaeva",
         "city": "New York",
@@ -49,14 +42,28 @@
     {
       "firstName": "First Name",
       "lastName": "Last Name",
-      "age": 3,
+      "age": 33,
+      "admin": true,
       "address": {
         "streetAddress": "ffg",
-        "city": "fdg",
+        "city": "city",
         "state": "dfg",
         "postalCode": "22"
       },
       "id": 8
+    },
+    {
+      "firstName": "New admin",
+      "lastName": "Last",
+      "age": 22,
+      "address": {
+        "streetAddress": "qwett",
+        "city": "minsk",
+        "state": "mn",
+        "postalCode": "222000"
+      },
+      "admin": true,
+      "id": 10
     }
   ]
 }

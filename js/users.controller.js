@@ -13,6 +13,7 @@
         vm.message = '';
         vm.typeMessage = '',
         vm.users = [];
+        vm.admins = [];
         vm.removeUser = null;
         vm.showModal = false;
 
@@ -27,10 +28,21 @@
 
         function activate() {
             return dataService.getData().success(function (data) {
-                vm.users = data;
+                mapData(data);
             })
             .error(function(data) {
                 showPopup(vm.messages.errorServer, 'error');
+            });
+        }
+
+        function mapData(data){
+            angular.forEach(data, function(item){
+                if(item.admin){
+                    vm.admins.push(item);
+                }
+                else {
+                    vm.users.push(item);
+                }
             });
         }
 
@@ -43,7 +55,12 @@
             dataService.remove(vm.removeUser).success(function (data) {
                 angular.forEach(vm.users, function(user, key){
                     if(user.id == vm.removeUser){
-                        vm.users.splice(key, 1)
+                        vm.users.splice(key, 1);
+                    }
+                });
+                angular.forEach(vm.admins, function(admin, key){
+                    if(admin.id == vm.removeUser){
+                        vm.admins.splice(key, 1);
                     }
                 });
                 showPopup(vm.messages.removeMessage, 'success');
