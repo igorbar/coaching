@@ -3,9 +3,9 @@
     angular.module('coaching')
         .controller('userListCtrl', userListCtrl);
 
-    userListCtrl.$inject = ['dataService'];
+    userListCtrl.$inject = ['dataService', 'messageService'];
 
-    function userListCtrl(dataService) {
+    function userListCtrl(dataService, messageService) {
         var vm = this;
         vm.expression = 'firstName';
         vm.reverse = false;
@@ -17,9 +17,12 @@
         vm.removeUser = null;
         vm.showModal = false;
 
+        vm.messages = {
+            removeMessage:  'User was removed!',
+            errorServer:  'Server is not available!'
+        };
+
         vm.actions = {
-            showPopup:showPopup,
-            hidePopup:hidePopup,
             getRemoveUserId:getRemoveUserId,
             removeUser:removeUser
         };
@@ -31,7 +34,7 @@
                 mapData(data);
             })
             .error(function(data) {
-                showPopup(vm.messages.errorServer, 'error');
+                messageService.showPopup(vm.messages.errorServer, 'error');
             });
         }
 
@@ -63,31 +66,12 @@
                         vm.admins.splice(key, 1);
                     }
                 });
-                showPopup(vm.messages.removeMessage, 'success');
+                messageService.showPopup(vm.messages.removeMessage, 'success');
             })
             .error(function(data) {
-                 showPopup(vm.messages.errorServer, 'error')
+                messageService.showPopup(vm.messages.errorServer, 'error')
             });
         }
-
-        function showPopup(message, type) {
-            vm.showMessage = true;
-            vm.message = message;
-            vm.typeMessage = type;
-        };
-
-        function hidePopup() {
-            vm.showModal = false;
-            vm.message = '';
-            vm.typeMessage = '';
-        };
-
-        vm.messages = {
-            addMessage:  'New user was created!',
-            updateMessage: 'Update was successful!',
-            removeMessage:  'User was removed!',
-            errorServer:  'Server is not available!'
-        };
 
     }
 

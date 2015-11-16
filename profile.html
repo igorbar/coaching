@@ -1,9 +1,11 @@
+<info-message></info-message>
 <form name="vm.profileForm" ng-submit="vm.profileForm.$valid" novalidate>
     <div class="row">
         <div class="col-md-6">
             <div class="form-group">
                 <label ng-class="{error: vm.profileForm.firstName.$invalid && vm.profileForm.$submitted}">First Name *</label>
-                <input type="text" name="firstName" class="form-control" ng-model="vm.user.firstName" required />
+                <input type="text" name="firstName" class="form-control" ng-model="vm.user.firstName" required/>
+
                 <div class="error-container" ng-show="vm.profileForm.firstName.$invalid && vm.profileForm.$submitted">
                     <small class="error" ng-show="vm.profileForm.firstName.$error.required">
                         First Name is required.
@@ -12,8 +14,9 @@
             </div>
 
             <div class="form-group">
-                <label ng-class="{error: vm.profileForm.lastName.$invalid && vm.profileForm.$submitted}">Last Name *</label>
-                <input type="text" name="lastName" class="form-control" ng-model="vm.user.lastName" required />
+                <label ng-class="{error: vm.profileForm.lastName.$invalid && vm.profileForm.$submitted}">Last Name  *</label>
+                <input type="text" name="lastName" class="form-control" ng-model="vm.user.lastName" required/>
+
                 <div class="error-container" ng-show="vm.profileForm.lastName.$invalid && vm.profileForm.$submitted">
                     <small class="error" ng-show="vm.profileForm.lastName.$error.required">
                         Last Name is required.
@@ -32,20 +35,21 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label>City</label>
-                <input type="text" name="city" class="form-control" ng-model="vm.user.address.city" />
+                <input type="text" name="city" class="form-control" ng-model="vm.user.address.city"/>
             </div>
             <div class="form-group">
                 <label>State</label>
-                <input type="text" name="state" class="form-control" ng-model="vm.user.address.state" />
+                <input type="text" name="state" class="form-control" ng-model="vm.user.address.state"/>
             </div>
             <div class="form-group">
                 <label>Postal Code</label>
-                <input type="text" name="postalcode" class="form-control" ng-model="vm.user.address.postalCode" />
+                <input type="text" name="postalcode" class="form-control" ng-model="vm.user.address.postalCode"/>
             </div>
             <div class="form-group">
                 <label>Is admin?</label>
+
                 <div class="form-label">
-                    <input type="checkbox" name="isAdmin" ng-model="vm.user.admin" />
+                    <input type="checkbox" name="isAdmin" ng-model="vm.user.admin"/>
                 </div>
             </div>
         </div>

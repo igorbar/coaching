@@ -4,13 +4,20 @@
         .module('coaching')
         .directive('infoMessage', infoMessage);
 
-    function infoMessage() {
+    infoMessage.$inject = ['messageService'];
+
+    function infoMessage(messageService) {
         return {
-            restrict: 'E',
+            restrict: 'AE',
             scope: {
-                type: "=",
-                cancel: '&onCancel',
-                message: "="
+
+            },
+            link: function (scope) {
+                scope.data = messageService.data;
+
+                scope.cancel = function() {
+                    messageService.hidePopup();
+                };
             },
             templateUrl: "directives/info-message.directive.html"
         };

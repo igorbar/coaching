@@ -4,7 +4,7 @@
       "id": 3,
       "firstName": "Eric",
       "lastName": "Cartman",
-      "age": 35,
+      "age": 8,
       "admin": true,
       "address": {
         "streetAddress": "Street",
@@ -22,20 +22,20 @@
         "streetAddress": "qw",
         "city": "Minsk",
         "state": "MN",
-        "postalCode": "220100"
+        "postalCode": "220101"
       },
       "id": 5
     },
     {
       "firstName": "first",
       "lastName": "last",
-      "age": 33,
+      "age": 35,
       "admin": false,
       "address": {
         "streetAddress": "Chapaeva",
         "city": "New York",
         "state": "NY",
-        "postalCode": "234567"
+        "postalCode": "23456"
       },
       "id": 6
     },
@@ -55,7 +55,7 @@
     {
       "firstName": "New admin",
       "lastName": "Last",
-      "age": 22,
+      "age": 24,
       "address": {
         "streetAddress": "qwett",
         "city": "minsk",
@@ -64,6 +64,16 @@
       },
       "admin": true,
       "id": 10
+    },
+    {
+      "firstName": "test",
+      "lastName": "test",
+      "age": 33,
+      "address": {
+        "streetAddress": "wwq",
+        "city": "New-City"
+      },
+      "id": 11
     }
   ]
 }
