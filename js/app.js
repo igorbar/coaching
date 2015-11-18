@@ -1,15 +1,20 @@
 (function () {
-    angular.module('coaching', ['ngRoute'])
+    angular.module('coaching', ['ngRoute', 'ngResource'])
         .config(config);
 
-        function config($routeProvider) {
-
+        function config($routeProvider, $resourceProvider) {
+            $resourceProvider.defaults.stripTrailingSlashes = false;
             $routeProvider.when('/list', {
                     templateUrl: 'list-users.html',
                     controller: 'userListCtrl',
                     controllerAs: 'vm'
                 })
-                .when('/profile/:userId', {
+                .when('/admin/:userId', {
+                    templateUrl: 'profile.html',
+                    controller: 'profileCtrl',
+                    controllerAs: 'vm'
+                })
+                .when('/user/:userId', {
                     templateUrl: 'profile.html',
                     controller: 'profileCtrl',
                     controllerAs: 'vm'

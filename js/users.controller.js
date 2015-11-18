@@ -11,7 +11,7 @@
         vm.reverse = false;
         vm.showMessage = false;
         vm.message = '';
-        vm.typeMessage = '',
+        vm.typeMessage = '';
         vm.users = [];
         vm.admins = [];
         vm.removeUser = null;
@@ -27,50 +27,71 @@
             removeUser:removeUser
         };
 
-        activate();
 
-        function activate() {
-            return dataService.getData().success(function (data) {
-                mapData(data);
-            })
-            .error(function(data) {
-                messageService.showPopup(vm.messages.errorServer, 'error');
-            });
+        function loadUsers(){
+            dataService.Users.getAll().then(
+                function (data){
+                    vm.users = data;
+                },
+                function (response){
+                    messageService.showPopup(vm.messages.errorServer, 'error');
+                }
+            );
         }
 
-        function mapData(data){
-            angular.forEach(data, function(item){
-                if(item.admin){
-                    vm.admins.push(item);
+        loadUsers();
+
+        function loadAdmins(){
+            dataService.Admins.getAll().then(
+                function (data){
+                    vm.admins = data;
+                },
+                function (response){
+                    messageService.showPopup(vm.messages.errorServer, 'error');
                 }
-                else {
-                    vm.users.push(item);
-                }
-            });
+            );
         }
 
-        function getRemoveUserId(userId){
+        loadAdmins();
+
+        function getRemoveUserId(userId, group){
             vm.removeUser = userId;
+            vm.userGroup = group;
             vm.showModal = true;
         }
 
         function removeUser(){
-            dataService.remove(vm.removeUser).success(function (data) {
-                angular.forEach(vm.users, function(user, key){
-                    if(user.id == vm.removeUser){
-                        vm.users.splice(key, 1);
+            if(vm.userGroup === 'user'){
+                dataService.Users.remove(vm.removeUser).then(
+                    function (data){
+                        angular.forEach(vm.users, function(user, key){
+                            if(user.id === vm.removeUser){
+                                vm.users.splice(key, 1);
+                            }
+                        });
+                        messageService.showPopup(vm.messages.removeMessage, 'success');
+                    },
+                    function (response){
+                        messageService.showPopup(vm.messages.errorServer, 'error');
                     }
-                });
-                angular.forEach(vm.admins, function(admin, key){
-                    if(admin.id == vm.removeUser){
-                        vm.admins.splice(key, 1);
+                );
+            }
+            else if(vm.userGroup === 'admin'){
+                dataService.Admins.remove(vm.removeUser).then(
+                    function (data){
+                        angular.forEach(vm.admins, function(admin, key){
+                            if(admin.id === vm.removeUser){
+                                vm.admins.splice(key, 1);
+                            }
+                        });
+                        messageService.showPopup(vm.messages.removeMessage, 'success');
+                    },
+                    function (response){
+                        messageService.showPopup(vm.messages.errorServer, 'error');
                     }
-                });
-                messageService.showPopup(vm.messages.removeMessage, 'success');
-            })
-            .error(function(data) {
-                messageService.showPopup(vm.messages.errorServer, 'error')
-            });
+                );
+            }
+
         }
 
     }

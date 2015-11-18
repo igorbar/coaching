@@ -1,19 +1,6 @@
 {
   "users": [
     {
-      "id": 3,
-      "firstName": "Eric",
-      "lastName": "Cartman",
-      "age": 8,
-      "admin": true,
-      "address": {
-        "streetAddress": "Street",
-        "city": "South Park",
-        "state": "CA",
-        "postalCode": "2222222"
-      }
-    },
-    {
       "firstName": "NEw User",
       "lastName": "Last Name",
       "age": 22,
@@ -55,6 +42,46 @@
     {
       "firstName": "New admin",
       "lastName": "Last",
+      "age": 40,
+      "address": {
+        "streetAddress": "qwett",
+        "city": "minsk",
+        "state": "mn",
+        "postalCode": "222001"
+      },
+      "admin": true,
+      "id": 10
+    },
+    {
+      "firstName": "user",
+      "lastName": "user",
+      "age": 43,
+      "address": {
+        "streetAddress": "werty",
+        "city": "Madrid",
+        "state": "M",
+        "postalCode": "98774"
+      },
+      "id": 11
+    }
+  ],
+  "admins": [
+    {
+      "id": 3,
+      "firstName": "Eric",
+      "lastName": "Cartman",
+      "age": 8,
+      "admin": true,
+      "address": {
+        "streetAddress": "Street",
+        "city": "South Park",
+        "state": "CA",
+        "postalCode": "2222222"
+      }
+    },
+    {
+      "firstName": "New admin",
+      "lastName": "Last",
       "age": 24,
       "address": {
         "streetAddress": "qwett",
@@ -68,12 +95,25 @@
     {
       "firstName": "test",
       "lastName": "test",
-      "age": 33,
+      "age": 35,
       "address": {
         "streetAddress": "wwq",
         "city": "New-City"
       },
       "id": 11
+    },
+    {
+      "firstName": "admin",
+      "lastName": "admin",
+      "age": 22,
+      "address": {
+        "streetAddress": "street",
+        "city": "london",
+        "state": "L",
+        "postalCode": "23455"
+      },
+      "admin": true,
+      "id": 12
     }
   ]
 }

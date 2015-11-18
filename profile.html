@@ -1,6 +1,7 @@
 <info-message></info-message>
 <form name="vm.profileForm" ng-submit="vm.profileForm.$valid" novalidate>
     <div class="row">
+        <h1>Profile {{vm.user.firstName}} {{vm.user.lastName}}</h1>
         <div class="col-md-6">
             <div class="form-group">
                 <label ng-class="{error: vm.profileForm.firstName.$invalid && vm.profileForm.$submitted}">First Name *</label>
@@ -46,11 +47,7 @@
                 <input type="text" name="postalcode" class="form-control" ng-model="vm.user.address.postalCode"/>
             </div>
             <div class="form-group">
-                <label>Is admin?</label>
 
-                <div class="form-label">
-                    <input type="checkbox" name="isAdmin" ng-model="vm.user.admin"/>
-                </div>
             </div>
         </div>
     </div>
