@@ -28,7 +28,7 @@
         };
 
 
-        function loadUsers(){
+        function loadData(){
             dataService.Users.getAll().then(
                 function (data){
                     vm.users = data;
@@ -37,11 +37,6 @@
                     messageService.showPopup(vm.messages.errorServer, 'error');
                 }
             );
-        }
-
-        loadUsers();
-
-        function loadAdmins(){
             dataService.Admins.getAll().then(
                 function (data){
                     vm.admins = data;
@@ -52,7 +47,7 @@
             );
         }
 
-        loadAdmins();
+        loadData();
 
         function getRemoveUserId(userId, group){
             vm.removeUser = userId;
