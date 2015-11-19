@@ -34,11 +34,11 @@
         };
 
         UserManager.prototype.getUserById = function(id){
-            return execQuery('get', {id: id}, this.sources.main);
+            return execQuery('get', {id: id, cache: false}, this.sources.main);
         };
 
         UserManager.prototype.getAll = function(){
-            return execQuery('query', {}, this.sources.main);
+            return execQuery('query', {cache: false}, this.sources.main);
         };
 
         UserManager.prototype.remove = function(id){
@@ -55,7 +55,6 @@
 
         Users.prototype = Object.create(UserManager.prototype);
         Users.prototype.constructor = Users;
-
 
         function Admins(){
             UserManager.apply(this, ['http://localhost:3000/admins/:id/']);
