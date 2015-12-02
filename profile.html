@@ -2,9 +2,11 @@
 <form name="vm.profileForm" ng-submit="vm.profileForm.$valid" novalidate>
     <div class="row">
         <h1>Profile {{vm.user.firstName}} {{vm.user.lastName}}</h1>
+
         <div class="col-md-6">
             <div class="form-group">
-                <label ng-class="{error: vm.profileForm.firstName.$invalid && vm.profileForm.$submitted}">First Name *</label>
+                <label ng-class="{error: vm.profileForm.firstName.$invalid && vm.profileForm.$submitted}">First Name
+                    *</label>
                 <input type="text" name="firstName" class="form-control" ng-model="vm.user.firstName" required/>
 
                 <div class="error-container" ng-show="vm.profileForm.firstName.$invalid && vm.profileForm.$submitted">
@@ -15,7 +17,8 @@
             </div>
 
             <div class="form-group">
-                <label ng-class="{error: vm.profileForm.lastName.$invalid && vm.profileForm.$submitted}">Last Name  *</label>
+                <label ng-class="{error: vm.profileForm.lastName.$invalid && vm.profileForm.$submitted}">Last Name
+                    *</label>
                 <input type="text" name="lastName" class="form-control" ng-model="vm.user.lastName" required/>
 
                 <div class="error-container" ng-show="vm.profileForm.lastName.$invalid && vm.profileForm.$submitted">
@@ -26,11 +29,11 @@
             </div>
             <div class="form-group">
                 <label>Age </label>
-                <input type="number" name="age" class="form-control" ng-model="vm.user.age" />
+                <input type="number" name="age" class="form-control" ng-model="vm.user.age"/>
             </div>
             <div class="form-group">
                 <label>Street</label>
-                <input type="text" name="streetaddress" class="form-control" ng-model="vm.user.address.streetAddress" />
+                <input type="text" name="streetaddress" class="form-control" ng-model="vm.user.address.streetAddress"/>
             </div>
         </div>
         <div class="col-md-6">
@@ -56,7 +59,9 @@
             <div class="border-top">
                 <div class="pull-right">
                     <a href="#/list" class="btn btn-default">Cancel</a>
-                    <button ng-click="vm.actions.save()" class="btn btn-primary" ng-disabled="!vm.profileForm.$dirty && vm.profileForm.$pristine">Save</button>
+                    <button ng-click="vm.actions.save()" class="btn btn-primary"
+                            ng-disabled="!vm.profileForm.$dirty && vm.profileForm.$pristine">Save
+                    </button>
                 </div>
             </div>
         </div>
