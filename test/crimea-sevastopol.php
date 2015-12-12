@@ -1,17 +1,17 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>Где пройти техосмотр в Крыму и Севастополе</title>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta name="description" content="Пройти техосмотр в Крыму и Севастополе. Адреса и телефоны пунктов ТО." />
-<meta name="keywords" content="где, пройти, техосмотр, Крым, Севастополь, адреса, телефоны"/>
-<meta name="classification" content="transportation"/>
-<meta name="robots" content="index,follow"/>
-<link rel="shortcut icon" href="/images/favicon.ico" />
-<link rel="stylesheet" type="text/css" href="/main.css" />
+	<title>Где пройти техосмотр в Крыму и Севастополе</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="description" content="Пройти техосмотр в Крыму и Севастополе. Адреса и телефоны пунктов ТО." />
+	<meta name="keywords" content="где, пройти, техосмотр, Крым, Севастополь, адреса, телефоны"/>
+	<meta name="classification" content="transportation"/>
+	<meta name="robots" content="index,follow"/>
+	<link rel="shortcut icon" href="/images/favicon.ico" />
+	<link rel="stylesheet" type="text/css" href="/main.css" />
 </head>
 <body>
-<div id="bodywrap">
+<div id="body-wrap">
   <div id="header-shad"></div>
   <div id="wrapper">
     <div id="header"> </div>
