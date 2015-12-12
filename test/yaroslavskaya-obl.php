@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>Где пройти техосмотр в Ярославской области</title>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta name="description" content="Пройти техосмотр в Ярославской области. Адреса и телефоны пунктов ТО." />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="description" content="Пройти техосмотр в Ярославской области. Адреса и телефоны пунктов ТО.">
 <meta name="keywords" content="где, пройти, техосмотр, Ярославская область, адреса, телефоны"/>
-<meta name="classification" content="transportation"/>
-<meta name="robots" content="index,follow"/>
-<link rel="shortcut icon" href="/images/favicon.ico" />
-<link rel="stylesheet" type="text/css" href="/main.css" />
+<meta name="classification" content="transportation">
+<meta name="robots" content="index,follow">
+<link rel="shortcut icon" href="/images/favicon.ico">
+<link rel="stylesheet" type="text/css" href="/main.css">
 </head>
 <body>
 <div id="bodywrap">
