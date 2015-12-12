@@ -11,7 +11,7 @@
 <link rel="stylesheet" type="text/css" href="/main.css">
 </head>
 <body>
-<div id="bodywrap">
+<div id="body-wrap">
   <div id="header-shad"></div>
   <div id="wrapper">
     <div id="header"> </div>
